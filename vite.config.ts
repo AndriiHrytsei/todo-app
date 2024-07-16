@@ -7,4 +7,5 @@ export default defineConfig({
   //! When creating a project using this template, 
   //! change the value of "base" to the name of your repository
   base: "/todo-app/",
+  
 })
