@@ -6,6 +6,9 @@ import {
   signOut
 } from "firebase/auth";
 
+//? ––––––––––––––––––––––––––––––– AUTHENTICATION ––––––––––––––––––––––––––––––– 
+
+
 interface CredentialsInterface {
   email: string;
   password: string;
