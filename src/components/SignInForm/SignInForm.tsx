@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom";
-import { signUp } from "../../redux/operations";
-import React, { useEffect, useState } from "react";
-import { useAppDispatch } from "../../redux/store";
-import { auth } from "../../config/firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import React from 'react'
+import { useState } from 'react';
+import { useAppDispatch } from '../../redux/store';
+import { useNavigate } from 'react-router-dom';
+import { signIn } from '../../redux/operations';
 
-const SignUp = () => {
+const SignInForm = () => {
+
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -14,7 +14,7 @@ const SignUp = () => {
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(signUp({ email: email, password: password }));
+    dispatch(signIn({ email: email, password: password }));
     navigate("/tasks");
   };
 
@@ -38,7 +38,7 @@ const SignUp = () => {
       />
       <button type="submit">Submit</button>
     </form>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default SignInForm

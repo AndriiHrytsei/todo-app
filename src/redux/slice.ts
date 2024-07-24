@@ -38,9 +38,25 @@ const slice = createSlice({
           id: action.payload?.id,
           tasks: [],
         };
-        state.isLoggedIn = true
+        state.isLoggedIn = true;
       }
     );
+    builder.addCase(signIn.rejected, (state: InitialStateInterface) => {
+      state.user = { email: "", id: "", tasks: [] };
+      state.isLoggedIn = false;
+    });
+    builder.addCase(signIn.fulfilled, (state: InitialStateInterface, action) => {
+      state.user = {
+        email: action.payload?.email,
+        id: action.payload?.id,
+        tasks: [],
+      };
+      state.isLoggedIn = true;
+    });
+    builder.addCase(logOut.fulfilled, (state: InitialStateInterface) => {
+      state.user = { email: "", id: "", tasks: [] };
+      state.isLoggedIn = false;
+    });
   },
 });
 

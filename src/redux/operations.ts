@@ -18,12 +18,12 @@ export const signUp = createAsyncThunk(
   "slice/signUp",
   async (credentials: CredentialsInterface, thunkAPI) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(
+      const userCredentials = await createUserWithEmailAndPassword(
         auth,
         credentials.email,
         credentials.password
       );
-      return { email: userCredential.user.email, id: userCredential.user.uid }
+      return { email: userCredentials.user.email, id: userCredentials.user.uid }
     } catch (err) {
       const error = err as Error;
       thunkAPI.rejectWithValue(error.message);
@@ -35,11 +35,12 @@ export const signIn = createAsyncThunk(
   "slice/signIn",
   async (credentials: CredentialsInterface, thunkAPI) => {
     try {
-      await signInWithEmailAndPassword(
+      const userCredentials = await signInWithEmailAndPassword(
         auth,
         credentials.email,
         credentials.password
       );
+      return { email: userCredentials.user.email, id: userCredentials.user.uid }
     } catch (err) {
       const error = err as Error;
       thunkAPI.rejectWithValue(error.message);
