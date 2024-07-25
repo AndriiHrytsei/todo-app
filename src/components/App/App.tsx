@@ -11,17 +11,7 @@ const Loading = lazy(() => import("../../pages/Loading"));
 
 function App() {
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log("signed in");
-        console.log(auth?.currentUser);
-      } else {
-        console.log("not signed in");
-        console.log(auth?.currentUser);
-      }
-    });
-  }, []);
+  
 
   return (
     <>
