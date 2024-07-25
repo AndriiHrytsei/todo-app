@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../redux/operations";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAppDispatch } from "../../redux/store";
-import { auth } from "../../config/firebase";
-import { onAuthStateChanged } from "firebase/auth";
 
 const SignUp = () => {
   const [email, setEmail] = useState<string>("");
