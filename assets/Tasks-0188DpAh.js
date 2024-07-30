@@ -1,0 +1,1 @@
+import{u as o,a as u,r as c,o as i,j as t,l as r,b as h}from"./index-CL6CLm8V.js";const p=()=>{const a=o(),s=u(),e=()=>{a(r()),s("/")};return c.useEffect(()=>{i(h,n=>{n||s("/")})},[]),t.jsxs("main",{children:[t.jsx("h1",{children:"Tasks"}),t.jsx("button",{type:"button",onClick:e,children:"logout"})]})};export{p as default};
