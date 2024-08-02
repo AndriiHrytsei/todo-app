@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { logOut } from "../redux/operations";
 import { useAppDispatch } from "../redux/store";
 import { useNavigate } from "react-router-dom";

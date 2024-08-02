@@ -1,10 +1,7 @@
-import { onAuthStateChanged } from "firebase/auth";
-import { Suspense, lazy, useEffect } from "react";
-import { Link, Route, Routes } from "react-router-dom";
-import { auth } from "../../config/firebase";
+import { Suspense, lazy } from "react";
+import { Route, Routes } from "react-router-dom";
 
 
-// const RestrictedRoute = lazy(() => import("../RestrictedRoute"))
 const SignUp = lazy(() => import("../../pages/SignUp"));
 const SignIn = lazy(() => import("../../pages/SignIn"));
 const Tasks = lazy(() => import("../../pages/Tasks"));
@@ -14,9 +11,7 @@ const NotFound = lazy(() => import("../../pages/NotFound"));
 
 function App() {
 
-  
-
-  return (
+   return (
     <>
       <Suspense fallback={<Loading />}>
         <Routes>
