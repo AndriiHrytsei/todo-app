@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://andriihrytsei.github.io/todo-app/",
   "scripts": {
     "start": "vite",
     "build": "tsc -b && vite build",
