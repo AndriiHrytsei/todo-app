@@ -14,7 +14,7 @@ function App() {
    return (
     <>
       <Suspense fallback={<Loading />}>
-        <Routes>
+      <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/tasks" element={<Tasks />} />
