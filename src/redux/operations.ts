@@ -1,5 +1,7 @@
 import { auth } from "../config/firebase";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { db } from "../config/firebase"
+import { doc, setDoc } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -23,6 +25,10 @@ export const signUp = createAsyncThunk(
         credentials.email,
         credentials.password
       );
+      await setDoc(doc(db, "users", userCredentials.user.uid), {
+        email: credentials.email,
+        tasks: []
+      })
       return { email: userCredentials.user.email, id: userCredentials.user.uid }
     } catch (err) {
       const error = err as Error;
